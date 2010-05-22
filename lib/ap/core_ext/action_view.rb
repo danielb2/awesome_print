@@ -4,7 +4,7 @@ module AwesomePrintActionView
     formatted = object.ai(options)
 
     if options[:plain]
-      %Q|<pre class="debug_dump">#{h(formatted).gsub("  ", "&nbsp; ")}</pre>|
+      %Q|<pre class="debug_dump">#{h(formatted).gsub("  ", "&nbsp; ")}</pre>|.html_safe
     else
       hash = {} # Build ANSI => HTML color map.
       [ :gray, :red, :green, :yellow, :blue, :purple, :cyan, :white ].each_with_index do |color, i|
