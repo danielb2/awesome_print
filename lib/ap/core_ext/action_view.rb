@@ -19,7 +19,7 @@ module AwesomePrintActionView
         formatted.gsub!(key, %Q|<font color="#{value}">|)
       end
       formatted.gsub!("\033[0m", "</font>")
-      %Q|<pre class="debug_dump">#{formatted}</pre>|
+      %Q|<pre class="debug_dump">#{formatted}</pre>|.html_safe
     end
 
   end
